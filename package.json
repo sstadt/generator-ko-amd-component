@@ -1,7 +1,7 @@
 {
   "name": "generator-ko-amd-component",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.1.0",
+  "description": "Generates an AMD knockout.js component",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "sstadt/generator-ko-amd-component",
