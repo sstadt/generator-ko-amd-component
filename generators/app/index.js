@@ -8,7 +8,6 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
     this.log(yosay('Welcome to the lovely ' + chalk.red('KoAmdComponent') + ' generator!'));
 
     var prompts = [{
@@ -27,15 +26,14 @@ module.exports = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.props = props;
-      // To access props later use this.props.someOption;
-
       done();
     }.bind(this));
   },
 
   writing: {
     projectfiles: function () {
-      var folderName = this.props.dest + this.props.name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() + '/',
+      var destination = (this.props.dest.charAt(this.props.dest.length - 1) === '/') ? this.props.dest : this.props.dest + '/',
+        folderName = destination + this.props.name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() + '/',
         context = {
           name: this.props.name,
           desc: this.props.desc
