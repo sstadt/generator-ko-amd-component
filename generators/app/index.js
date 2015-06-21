@@ -41,9 +41,6 @@ module.exports = yeoman.generators.Base.extend({
           desc: this.props.desc
         };
 
-      console.log(this.templatePath('_component.js'));
-      console.log(this.destinationPath(folderName + 'template.html'));
-
       this.fs.copyTpl(
        this.templatePath('_component.js'),
        this.destinationPath(folderName + 'component.js'),
